@@ -14,4 +14,4 @@ python Train.py 100 200 2000
 ```
 
 <b>Training:</b><br />
-It took a large iterations to master the game since the possible states of this game is very big. A 3*3 2D tic-tac-toe has about 3^9 possible states whereas 4*4*4 3D tic-tac-toe has about 3^64 possible states. The currect states are trained for ~2000 iterations, and the agent is still not very smart. 
+It took a large iterations to master the game since the possible states of this game is very big. A 3 * 3 2D tic-tac-toe has about 3^9 possible states whereas 4 * 4 * 4 3D tic-tac-toe has about 3^64 possible states. The currect states are trained for ~2000 iterations, and the agent is still not very smart. 
