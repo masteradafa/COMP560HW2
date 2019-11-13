@@ -5,10 +5,12 @@ We briefly trained an agent to learn how to play 3D tic-tac-toe through reinforc
 python 3<br />
 pygame<br />
 pygame can be install via pip<br />
+
 Run <b>Play.py</b> to play game.<br />
 ```
 python Play.py
 ```
+
 Run <b>Train.py</b> to train the agent. <b>Train.py</b> takes three arguments, which describe the number of trials that should be run to learn. The numbers should be increasing in value. After each number of trials (where each trial is the playing of a full game), the program print out the current utility values for each of the squares to 3 significant digits). For example, to train 100, 200, and 2000 trials.<br />
 ```
 python Train.py 100 200 2000
