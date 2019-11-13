@@ -2,9 +2,9 @@
 We briefly trained an agent to learn how to play 3D tic-tac-toe through reinforcement learning(Q-learning)
 
 <b>Requirements:</b><br />
-python 3
-pygame
-
+python 3<br />
+pygame<br />
+pygame can be install via pip<br />
 Run <b>Play.py</b> to play game.<br />
 ```
 python Play.py
