@@ -253,11 +253,33 @@ class TicTacToe:
                 done = False
                 isX = random.choice([True, False])
                 while not done:
-                    if isX:
-                        move = self.player1.epslion_greedy(self.board, self.possible_moves(),display)
+                    critical = False
+                    for m in self.possible_moves():
+                        n= m-1
+                        if self.board[n] == ' ':
+                            self.board[n] = 'X'
+                            rw, dn =self.evaluate('X')
+                            if rw == 1.0:
+                                critical = True
+                                move = m
+                            self.board[n] = 'O'
+                            rw, dn =self.evaluate('O')
+                            if rw == 1.0:
+                                critical = True
+                                move = m
+                            self.board[n] = ' '
+                    if not critical:
+                        if isX:
+                            move = self.player1.epslion_greedy(self.board, self.possible_moves(),display)
+                        else:
+                            move = self.player2.epslion_greedy(self.board, self.possible_moves(),display)
                     else:
-                        move = self.player2.epslion_greedy(self.board, self.possible_moves(),display)
-
+                        if isX:
+                            self.player1.state_action_last=(tuple(self.board),move)
+                            self.player1.q_last=self.player1.getQ(tuple(self.board),move)
+                        else:
+                            self.player2.state_action_last=(tuple(self.board),move)
+                            self.player2.q_last=self.player2.getQ(tuple(self.board),move)
                     reward, done = self.step(isX, move)
 
                     if (reward == 1):  # won
